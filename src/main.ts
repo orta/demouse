@@ -52,6 +52,8 @@ function main(argv: any[]) {
         // const windows = Gtk.Window.list_toplevels()// as import("@gi-types/gdk").Window[]
         
 
+        // https://github.com/GNOME/accerciser/blob/f927564e08680272f58338a4aa601e69259fd477/macaroon/macaroon/record/script_factory.py#L199
+
         // const active_wspace = scr.get_active_workspace()
         log(atspi.get_desktop(0))
         log("started")
