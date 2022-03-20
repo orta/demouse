@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=Clipboard
-GenericName=Clipboard
+Name=Demouse
+GenericName=Demouse
 Comment=A test thing
 Categories=Utility;Education;
-Exec=io.orta.clipboard
+Exec=io.orta.demouse
 Icon=application-default-icon
 Terminal=false
 Type=Application

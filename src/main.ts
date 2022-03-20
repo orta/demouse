@@ -24,7 +24,7 @@ function main(argv: any[]) {
     };
 
     const application = new Gtk.Application({
-        application_id: 'io.orta.clipboard',
+        application_id: 'io.orta.demouse',
         flags: Gio.ApplicationFlags.FLAGS_NONE
     }); 
     

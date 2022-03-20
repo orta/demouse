@@ -1,8 +1,8 @@
 {
-  "name": "eos-clipboard-manager",
+  "name": "demouse",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/orta/throwaway-gjs-example.git",
+  "repository": "https://github.com/orta/demouse.git",
   "license": "MIT",
   "dependencies": {
     "@gi-types/gobject": "^2.66.9",

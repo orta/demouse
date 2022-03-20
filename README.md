@@ -1,6 +1,13 @@
-### elementaryOS Clipboard Manager
+### GTK Accessibility Vim-style Keyboard Shortcuts
 
-Taking design inspiration from [Alfred on macOS](https://www.alfredapp.com/help/features/clipboard/).
+Taking inspiration from:
+
+- https://shortcatapp.com/
+- https://github.com/dexterleng/vimac#vimac---productive-macos-keyboard-driven-navigation
+- https://github.com/lethalman/gtkhah
+- https://gitlab.gnome.org/GNOME/accerciser
+
+Uses the GTK accessibility APIs (ATK) to find all of the current window's buttons and provide a keyboard shortcut for them.
 
 ### Getting Set Up
 
@@ -23,11 +30,9 @@ yarn tsc
 code .
 ```
 
-Note: we are targeting gjs 1.64.5, not latest because elementaryOS uses older builds of Ubuntu and they don't have the [latest gjs](https://launchpad.net/ubuntu/+source/gjs) in apt. 
-
 ### Compiling
 
-eOS apps are built by meson, I have a quick script to make a build into a tmp dir and then open it:
+GTK apps are built by meson, I have some quick scripts for building the app:
 
 ```sh
 # Run this once, or any time you change something in the data folder:
@@ -36,3 +41,5 @@ sh ./scripts/bootstrap.sh
 # Now run this:
 sh ./scripts/run.sh
 ```
+
+You can use `yarn dev` to start up a watch mode which restarts the app when you save a `.ts` file.

@@ -37,7 +37,7 @@ client.command(['watch-project', process.cwd()], function (error, resp) {
       console.log("changes")
       if (lastAppPID != -1) {
           try {
-              execSync('killall io.orta.clipboard')
+              execSync('killall io.orta.demouse')
           } catch (error) {
               
           }
