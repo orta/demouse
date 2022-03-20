@@ -7,7 +7,6 @@ imports.package.init({ name: "io.orta.demouse", version: "@PACKAGE_VERSION@", pr
 
 let datadir = GLib.build_filenamev(["@prefix@", 'share']);
 let a = GLib.build_filenamev([datadir, "io.orta.demouse"])
-print(datadir, a)
 
 let resource = Gio.Resource.load(GLib.build_filenamev([a, `io.orta.demouse.src.gresource`]));
 resource._register();

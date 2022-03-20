@@ -23,7 +23,9 @@ dependency('gtk+-3.0')
 dependency('glib-2.0')
 dependency('gobject-introspection-1.0', version: '>=1.35.9')
 dependency('gjs-1.0', version: '>= 1.50.0')
+dependency('atspi-2')
 
+# maybe we cn skip this?
 wnck_ver = '>=3.4.8'
 wnck = dependency('libwnck-3.0', version: wnck_ver, required: true)
 

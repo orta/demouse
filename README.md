@@ -19,6 +19,7 @@ sudo apt-get install meson
 sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build
 sudo apt-get install gjs libgjs-dev
 sudo apt-get install libwnck-3-0 libwnck-3-dev libwnck-common 
+sudo apt-get install libatspi2.0-dev
 ```
 
 Now you can think about the JS level deps:

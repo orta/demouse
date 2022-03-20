@@ -10,6 +10,7 @@ declare const imports: {
         Gio: typeof import("@gi-types/gio"),
         GLib: typeof import("@gi-types/glib"),
         Gtk: typeof import("@gi-types/gtk"),
+        Gdk: typeof import("@gi-types/gdk"), 
         GObject: typeof import("@gi-types/gobject"), 
         Atk: typeof import("@gi-types/atk")
         Wnck: any
@@ -30,8 +31,14 @@ declare const imports: {
 interface WnckWindow extends GObject.Object {
     is_active: boolean
     get_name: () => string
+    get_application: () => WnkcApplication
 }
 
+//https://lazka.github.io/pgi-docs/Wnck-3.0/classes/Application.html#Wnck.Application
+interface WnkcApplication extends GObject.Object {
+    get_pid: () => number
+    get_windows: () => WnckWindow[]
 
+}
 
 declare function print(str: string): void
