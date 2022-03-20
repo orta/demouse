@@ -37,6 +37,7 @@ function main(argv: any[]) {
       return;
     }
     scr.force_update();
+
     const windows = scr.get_windows_stacked();
     const foreground = windows.pop();
     if (!foreground) {
@@ -49,18 +50,29 @@ function main(argv: any[]) {
 
     // https://lazka.github.io/pgi-docs/Atspi-2.0/classes/Accessible.html#Atspi.Accessible
     const desktop = atspi.get_desktop(0);
+    log(atspi.get_desktop_count() + " desktops");
 
     for (let index = 0; index < desktop.get_child_count(); index++) {
-      const element = desktop.get_child_at_index(index);
-      log(element.get_name());
+      const app = desktop.get_child_at_index(index);
+      printAccessible(app);
+
+      for (let j = 0; j < app.get_child_count(); j++) {
+        const window = app.get_child_at_index(j);
+        //   printChildren(element);
+        if (window.get_name() === fgName) {
+          log("found it!");
+        }
+      }
     }
   });
   return application.run(argv);
 }
 
-const printChildren = (element: Accessible) => {
+const printAccessible = (element: Accessible) => {
+  log("> " + element.get_name());
   for (let index = 0; index < element.get_child_count(); index++) {
     const child = element.get_child_at_index(index);
-    log(child.get_name());
+    // const focused = child.is
+    log(" - " + child.get_name() + " " + child.get_role_name() + " " + child.get_description());
   }
 };
