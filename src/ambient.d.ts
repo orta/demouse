@@ -11,7 +11,9 @@ declare const imports: {
         GLib: typeof import("@gi-types/glib"),
         Gtk: typeof import("@gi-types/gtk"),
         GObject: typeof import("@gi-types/gobject"), 
-        Atk: typeof import("@gi-types/gobject")
+        Atk: typeof import("@gi-types/atk")
+        Wnck: any
+
     }
     // There correspond to files which have gone from src -> dist
     // via esbuild, the general rule of thumb to remember is that
@@ -23,5 +25,13 @@ declare const imports: {
         mainWindow: any
     }
 }
+
+// https://lazka.github.io/pgi-docs/Wnck-3.0/classes/Window.html
+interface WnckWindow extends GObject.Object {
+    is_active: boolean
+    get_name: () => string
+}
+
+
 
 declare function print(str: string): void

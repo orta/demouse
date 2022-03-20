@@ -24,6 +24,9 @@ dependency('glib-2.0')
 dependency('gobject-introspection-1.0', version: '>=1.35.9')
 dependency('gjs-1.0', version: '>= 1.50.0')
 
+wnck_ver = '>=3.4.8'
+wnck = dependency('libwnck-3.0', version: wnck_ver, required: true)
+
 app_launcher = configure_file(
   input: 'data/io.orta.demouse.in',
   output:meson.project_name(),

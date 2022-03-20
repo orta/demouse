@@ -18,7 +18,6 @@ client.command(['watch-project', process.cwd()], function (error, resp) {
   if ("relative_path" in resp) {
     path_prefix = resp.relative_path
   }
-  console.log({root, path_prefix})
 
   client.command(
     [
